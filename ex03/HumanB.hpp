@@ -1,12 +1,14 @@
 #ifndef HUMANB_HPP
 #define HUMANB_HPP
 
-#include "Weapon.h"
+#include "Weapon.hpp"
+#include <iostream>
+#include <string>
 
 class HumanB
 {
 public:
-	HumanB(std::string);
+	HumanB(std::string name);
 	~HumanB();
 
 	void	attack() const;
@@ -14,6 +16,6 @@ public:
 
 private:
 	std::string	_name;
-	Weapon		_weapon;
+	Weapon		*_weapon;
 };
 #endif

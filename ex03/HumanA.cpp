@@ -2,7 +2,7 @@
 
 HumanA::HumanA(std::string name, Weapon weapon): _name(name), _weapon(weapon)
 {
-	std::cout << "Human A died" << std::endl;
+	std::cout << "Human A was born" << std::endl;
 }
 
 HumanA::~HumanA()
@@ -10,7 +10,7 @@ HumanA::~HumanA()
 	std::cout << "Human A died" << std::endl;
 }
 
-void	attack() const
+void	HumanA::attack() const
 {
-	std::cout << _name << " attacks with their " << _weapon << std::endl;
+	std::cout << _name << " attacks with their " << _weapon.getType() << std::endl;
 }

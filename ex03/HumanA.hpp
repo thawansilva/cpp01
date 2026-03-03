@@ -1,7 +1,9 @@
 #ifndef HUMANA_HPP
 #define HUMANA_HPP
 
-#include "Weapon.h"
+#include "Weapon.hpp"
+#include <iostream>
+#include <string>
 
 class HumanA
 {
