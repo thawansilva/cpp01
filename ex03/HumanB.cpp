@@ -1,17 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: thaperei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/03 18:39:30 by thaperei          #+#    #+#             */
+/*   Updated: 2026/03/03 18:53:44 by thaperei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name)
+HumanB::HumanB(std::string name): name(name)
 {
-	_name = name;
-	std::cout << "Human B was born" << std::endl;
 }
 
 HumanB::~HumanB()
 {
-	std::cout << "Human B died" << std::endl;
 }
 
 void	HumanB::attack() const
 {
-	std::cout << _name << " attacks with their " << _weapon->getType() << std::endl;
+	std::cout << name << " attacks with their " << weapon->getType() << std::endl;
+}
+
+void	HumanB::setWeapon(Weapon &weapon)
+{
+	this->weapon = &weapon;
 }

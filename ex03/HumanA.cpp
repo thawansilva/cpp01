@@ -1,16 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: thaperei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/03 18:39:52 by thaperei          #+#    #+#             */
+/*   Updated: 2026/03/03 18:39:53 by thaperei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string name, Weapon weapon): _name(name), _weapon(weapon)
+HumanA::HumanA(std::string name, Weapon &weapon): name(name), weapon(weapon)
 {
-	std::cout << "Human A was born" << std::endl;
 }
 
 HumanA::~HumanA()
 {
-	std::cout << "Human A died" << std::endl;
 }
 
 void	HumanA::attack() const
 {
-	std::cout << _name << " attacks with their " << _weapon.getType() << std::endl;
+	std::cout << name << " attacks with their " << weapon.getType() << std::endl;
 }
