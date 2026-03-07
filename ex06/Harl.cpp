@@ -6,7 +6,7 @@
 /*   By: thaperei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/07 07:53:51 by thaperei          #+#    #+#             */
-/*   Updated: 2026/03/07 10:46:00 by thaperei         ###   ########.fr       */
+/*   Updated: 2026/03/07 12:29:09 by thaperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ void	Harl::complain( std::string level )
 				case 3:
 					error();
 					// fall through
-					break ;
 				default:
 					break ;
 			}
