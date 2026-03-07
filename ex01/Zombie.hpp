@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: thaperei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/07 11:41:08 by thaperei          #+#    #+#             */
+/*   Updated: 2026/03/07 11:41:58 by thaperei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ZOMBIE_HPP
 #define ZOMBIE_HPP
 #include <iostream>
@@ -10,7 +22,7 @@ public:
 	~Zombie();
 
 	void	announce(void) const;
-	void	setName(std::string);
+	void	setName(std::string name);
 
 private:
 	std::string	_name;
