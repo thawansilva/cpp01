@@ -35,6 +35,11 @@ int main(int argc, char *argv[])
 	const char			*filename = argv[1];
 	std::string const	target = argv[2];
 	std::string const	replacement = argv[3];
+	if (target.empty())
+	{
+		std::cerr << "Empty target is not allowed" << std::endl;
+		return (0);
+	}
 
 	std::ifstream		file(filename);
 	if (!file.is_open())
