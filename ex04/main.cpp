@@ -2,42 +2,26 @@
 #include <fstream>
 #include <cstring>
 
-std::size_t	getContentSize(std::ifstream &file)
+void	createOutputReplace(const char *filename, std::ifstream &file,
+		std::string target, std::string replace)
 {
-	file.seekg(0, file.end);
-	std::size_t	length = file.tellg();
-	file.seekg(0, file.beg);
-	return length;
-}
-
-//Open the input file.
-//Read one line at a time.
-//Search for the first occurrence of the target string.
-//When found:
-//	Copy the part before the match.
-//	Append the replacement text.
-//	Continue searching after the match.
-//Write the processed line to an output file.
-
-std::string	replaceText(std::ifstream &file, std::string target,
-		std::string replace)
-{
-	std::string	line;
-	std::string	newline;
-	std::size_t	start_pos = 0;
-	std::size_t	end;
+	std::string		outputName = filename;
+	std::ofstream	outputFile((outputName + ".replace").c_str());
+	std::string		line;
+	std::size_t		found;
 
 	while (std::getline(file, line))
 	{
-		while ((end = line.find(target)) != std::string::npos)
+		found = line.find(target);
+		while (found != std::string::npos)
 		{
-			newline = line.substr(start_pos, end);
-			newline += replace;
-			newline += line.substr(end);
-			start_pos = end;
+			line.erase(found, target.length());
+			line.insert(found, replace);
+			found = line.find(target);
 		}
+		outputFile << line << std::endl;
 	}
-	return newline;
+	outputFile.close();
 }
 
 int main(int argc, char *argv[])
@@ -49,8 +33,8 @@ int main(int argc, char *argv[])
 		return 0;
 	}
 	const char			*filename = argv[1];
-	std::string const	txtTarget = argv[2];
-	std::string const	txtReplacement = argv[3];
+	std::string const	target = argv[2];
+	std::string const	replacement = argv[3];
 
 	std::ifstream		file(filename);
 	if (!file.is_open())
@@ -59,7 +43,7 @@ int main(int argc, char *argv[])
 		file.close();
 		return (0);
 	}
-	std::string result = replaceText(file, txtTarget, txtReplacement);
+	createOutputReplace(filename, file, target, replacement);
 	file.close();
 	return (0);
 }
