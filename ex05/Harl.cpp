@@ -6,7 +6,7 @@
 /*   By: thaperei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/07 07:53:51 by thaperei          #+#    #+#             */
-/*   Updated: 2026/03/07 10:13:04 by thaperei         ###   ########.fr       */
+/*   Updated: 2026/03/07 12:32:27 by thaperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ void	Harl::error( void )
 
 void	Harl::complain( std::string level )
 {
-	int					i;
-	std::string			levels[NUM_LEVELS] = {"DEBUG", "INFO", "WARNING",
+	int			i;
+	std::string	levels[NUM_LEVELS] = {"DEBUG", "INFO", "WARNING",
 		"ERROR"};
-	functionPerLevel	functions[NUM_LEVELS] = {
+	method_t		functions[NUM_LEVELS] = {
 		&Harl::debug,
 		&Harl::info,
 		&Harl::warning,

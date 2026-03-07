@@ -6,7 +6,7 @@
 /*   By: thaperei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/07 07:54:32 by thaperei          #+#    #+#             */
-/*   Updated: 2026/03/07 10:11:31 by thaperei         ###   ########.fr       */
+/*   Updated: 2026/03/07 12:32:39 by thaperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ private:
 	void error( void );
 };
 
-typedef void (Harl::*functionPerLevel)(void);
+typedef void (Harl::*method_t)(void);
 #endif
